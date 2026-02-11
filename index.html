@@ -1,0 +1,2238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Flamingo Flow — Rank in Google's Top 3 in Days, Not Months</title>
+<meta name="description" content="Get authentic reviews, rank in the Google map pack, and dominate your local search — all for just $130-$250/month. Stop wasting $10K+ on Google Ads.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ============================================
+   CSS RESET & VARIABLES
+   ============================================ */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --bg-deep: #060918;
+  --bg-primary: #0a0e27;
+  --bg-secondary: #0f1535;
+  --bg-card: #111738;
+  --bg-card-hover: #161d45;
+  --pink: #FF1493;
+  --pink-light: #FF69B4;
+  --purple: #9D4EDD;
+  --cyan: #00D9FF;
+  --cyan-dim: #00a8c6;
+  --white: #ffffff;
+  --gray-100: #e8eaf0;
+  --gray-300: #a0a3b5;
+  --gray-500: #6b6f85;
+  --gray-700: #3a3f5c;
+  --font-display: 'Space Grotesk', sans-serif;
+  --font-body: 'Plus Jakarta Sans', sans-serif;
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+  --transition-fast: 250ms cubic-bezier(.4,0,.2,1);
+  --transition-med: 400ms cubic-bezier(.4,0,.2,1);
+  --glow-pink: 0 0 40px rgba(255,20,147,.25);
+  --glow-cyan: 0 0 40px rgba(0,217,255,.2);
+  --glow-purple: 0 0 40px rgba(157,78,221,.2);
+}
+
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+
+body {
+  font-family: var(--font-body);
+  background: var(--bg-deep);
+  color: var(--gray-100);
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a { color: inherit; text-decoration: none; }
+img { max-width: 100%; display: block; }
+button { cursor: pointer; border: none; font-family: inherit; }
+ul { list-style: none; }
+
+/* ============================================
+   UTILITY CLASSES
+   ============================================ */
+.container {
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, var(--pink) 0%, var(--purple) 50%, var(--cyan) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradient-text-pink-cyan {
+  background: linear-gradient(90deg, var(--pink-light), var(--cyan));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.section-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 16px;
+  border-radius: 100px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  background: linear-gradient(135deg, rgba(255,20,147,.15), rgba(157,78,221,.15));
+  border: 1px solid rgba(255,20,147,.25);
+  color: var(--pink-light);
+  margin-bottom: 20px;
+}
+
+/* ============================================
+   BUTTONS
+   ============================================ */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 14px 32px;
+  border-radius: 12px;
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 700;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast), opacity var(--transition-fast);
+  will-change: transform;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn:hover { transform: scale(1.05); }
+.btn:active { transform: scale(0.98); }
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--pink), var(--purple), var(--cyan));
+  color: var(--white);
+  box-shadow: var(--glow-pink);
+}
+.btn-primary:hover {
+  box-shadow: 0 0 60px rgba(255,20,147,.4), 0 0 30px rgba(0,217,255,.25);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--cyan);
+  border: 2px solid rgba(0,217,255,.4);
+}
+.btn-outline:hover {
+  background: rgba(0,217,255,.08);
+  border-color: var(--cyan);
+  box-shadow: var(--glow-cyan);
+}
+
+.btn-sm {
+  padding: 10px 24px;
+  font-size: 14px;
+  border-radius: 10px;
+}
+
+/* ============================================
+   ANIMATED BACKGROUND ORBS
+   ============================================ */
+.orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  pointer-events: none;
+  will-change: transform;
+  z-index: 0;
+}
+
+.orb-pink {
+  background: radial-gradient(circle, rgba(255,20,147,.35), transparent 70%);
+}
+.orb-cyan {
+  background: radial-gradient(circle, rgba(0,217,255,.25), transparent 70%);
+}
+.orb-purple {
+  background: radial-gradient(circle, rgba(157,78,221,.3), transparent 70%);
+}
+
+@keyframes orbFloat {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(30px, -20px) scale(1.05); }
+  66% { transform: translate(-20px, 15px) scale(0.95); }
+}
+
+/* ============================================
+   SCROLL REVEAL ANIMATION
+   ============================================ */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s cubic-bezier(.4,0,.2,1), transform 0.6s cubic-bezier(.4,0,.2,1);
+  will-change: transform, opacity;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* stagger children */
+.reveal-stagger > .reveal:nth-child(1) { transition-delay: 0ms; }
+.reveal-stagger > .reveal:nth-child(2) { transition-delay: 100ms; }
+.reveal-stagger > .reveal:nth-child(3) { transition-delay: 200ms; }
+.reveal-stagger > .reveal:nth-child(4) { transition-delay: 300ms; }
+.reveal-stagger > .reveal:nth-child(5) { transition-delay: 400ms; }
+.reveal-stagger > .reveal:nth-child(6) { transition-delay: 500ms; }
+
+/* ============================================
+   HEADER
+   ============================================ */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  padding: 0 24px;
+  height: 72px;
+  display: flex;
+  align-items: center;
+  background: rgba(6,9,24,.7);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255,255,255,.06);
+  transition: background var(--transition-fast);
+}
+
+.header.scrolled {
+  background: rgba(6,9,24,.92);
+}
+
+.header-inner {
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-family: var(--font-display);
+  font-size: 24px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, var(--pink), var(--purple), var(--cyan));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+}
+
+.nav-desktop {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+}
+
+.nav-desktop a {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--gray-300);
+  transition: color var(--transition-fast);
+  position: relative;
+}
+
+.nav-desktop a:hover { color: var(--white); }
+
+.nav-desktop a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--pink), var(--cyan));
+  border-radius: 2px;
+  transition: width var(--transition-fast);
+}
+.nav-desktop a:hover::after { width: 100%; }
+
+.header-cta {
+  padding: 10px 24px;
+  font-size: 14px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, var(--pink), var(--purple));
+  color: var(--white);
+  font-weight: 700;
+  font-family: var(--font-display);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+  will-change: transform;
+}
+.header-cta:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 30px rgba(255,20,147,.35);
+}
+
+/* Hamburger */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  padding: 4px;
+}
+.hamburger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--white);
+  border-radius: 2px;
+  transition: transform var(--transition-fast), opacity var(--transition-fast);
+}
+.hamburger.active span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.hamburger.active span:nth-child(2) { opacity: 0; }
+.hamburger.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* Mobile Nav */
+.nav-mobile {
+  display: none;
+  position: fixed;
+  top: 72px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(6,9,24,.97);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+  z-index: 999;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity var(--transition-med), transform var(--transition-med);
+  pointer-events: none;
+}
+.nav-mobile.open {
+  display: flex;
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: all;
+}
+.nav-mobile a {
+  font-family: var(--font-display);
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--gray-100);
+  transition: color var(--transition-fast);
+}
+.nav-mobile a:hover { color: var(--pink-light); }
+
+/* ============================================
+   HERO SECTION
+   ============================================ */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  padding: 140px 0 100px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+.hero .orb-1 {
+  width: 500px;
+  height: 500px;
+  top: -100px;
+  left: -150px;
+  animation: orbFloat 12s ease-in-out infinite;
+}
+.hero .orb-2 {
+  width: 400px;
+  height: 400px;
+  bottom: -50px;
+  right: -100px;
+  animation: orbFloat 15s ease-in-out infinite reverse;
+}
+.hero .orb-3 {
+  width: 250px;
+  height: 250px;
+  top: 50%;
+  left: 50%;
+  animation: orbFloat 10s ease-in-out infinite 3s;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.hero-content { max-width: 580px; }
+
+.hero-headline {
+  font-family: var(--font-display);
+  font-size: clamp(36px, 5vw, 60px);
+  font-weight: 900;
+  line-height: 1.1;
+  letter-spacing: -1.5px;
+  margin-bottom: 24px;
+  color: var(--white);
+}
+
+.hero-headline .highlight {
+  background: linear-gradient(135deg, var(--pink-light), var(--cyan));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero-sub {
+  font-size: 18px;
+  line-height: 1.7;
+  color: var(--gray-300);
+  margin-bottom: 36px;
+  max-width: 500px;
+}
+
+.hero-sub strong {
+  color: var(--cyan);
+  font-weight: 700;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+
+/* Social proof */
+.social-proof {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.avatar-group {
+  display: flex;
+}
+.avatar-group .avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 2px solid var(--bg-deep);
+  margin-left: -10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--white);
+}
+.avatar-group .avatar:first-child { margin-left: 0; }
+.avatar-group .a1 { background: linear-gradient(135deg, #FF6B6B, #ee5a24); }
+.avatar-group .a2 { background: linear-gradient(135deg, #48dbfb, #0abde3); }
+.avatar-group .a3 { background: linear-gradient(135deg, #ff9ff3, #f368e0); }
+.avatar-group .a4 { background: linear-gradient(135deg, #feca57, #ff9f43); }
+
+.social-proof-text {
+  font-size: 14px;
+  color: var(--gray-300);
+}
+.social-proof-text strong {
+  color: var(--white);
+  font-weight: 700;
+}
+
+/* Video container */
+.video-wrapper {
+  position: relative;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  aspect-ratio: 1 / 1;
+  max-width: 520px;
+  margin-left: auto;
+  cursor: pointer;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+  will-change: transform;
+}
+.video-wrapper:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 80px rgba(255,20,147,.2), 0 0 40px rgba(0,217,255,.15);
+}
+
+.video-bg {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(145deg, var(--pink), var(--purple) 50%, var(--cyan));
+  opacity: .85;
+}
+
+.video-inner {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  gap: 20px;
+  padding: 40px;
+}
+
+.play-btn {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: rgba(255,255,255,.15);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 2px solid rgba(255,255,255,.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform var(--transition-fast), background var(--transition-fast);
+  will-change: transform;
+}
+.play-btn:hover {
+  transform: scale(1.1);
+  background: rgba(255,255,255,.25);
+}
+
+.play-btn svg {
+  width: 32px;
+  height: 32px;
+  fill: var(--white);
+  margin-left: 4px;
+}
+
+.video-title {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--white);
+}
+.video-duration {
+  font-size: 14px;
+  color: rgba(255,255,255,.7);
+}
+
+/* Decorative grid pattern */
+.video-grid-pattern {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.04) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+/* ============================================
+   HOW IT WORKS SECTION
+   ============================================ */
+.how-it-works {
+  position: relative;
+  padding: 120px 0;
+  overflow: hidden;
+}
+
+.how-it-works .orb-1 {
+  width: 350px;
+  height: 350px;
+  top: 10%;
+  right: -100px;
+  animation: orbFloat 14s ease-in-out infinite;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 80px;
+  position: relative;
+  z-index: 1;
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(30px, 4vw, 48px);
+  font-weight: 900;
+  letter-spacing: -1px;
+  color: var(--white);
+  margin-bottom: 16px;
+}
+
+.section-subtitle {
+  font-size: 18px;
+  color: var(--gray-300);
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.steps-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  position: relative;
+  z-index: 1;
+}
+
+.step-card {
+  display: flex;
+  gap: 24px;
+  padding: 36px;
+  border-radius: var(--radius-lg);
+  background: rgba(17,23,56,.6);
+  border: 1px solid rgba(255,255,255,.06);
+  transition: transform var(--transition-fast), border-color var(--transition-fast), box-shadow var(--transition-fast);
+  will-change: transform;
+  position: relative;
+  overflow: hidden;
+}
+
+.step-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: var(--radius-lg);
+  padding: 1px;
+  background: linear-gradient(135deg, rgba(255,20,147,.2), rgba(157,78,221,.1), rgba(0,217,255,.2));
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity var(--transition-fast);
+}
+
+.step-card:hover::before { opacity: 1; }
+.step-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 60px rgba(0,0,0,.3);
+}
+
+.step-number {
+  font-family: var(--font-display);
+  font-size: 56px;
+  font-weight: 900;
+  line-height: 1;
+  background: linear-gradient(180deg, var(--pink), var(--purple));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  flex-shrink: 0;
+}
+
+.step-content { flex: 1; }
+
+.step-title {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--white);
+  margin-bottom: 8px;
+}
+
+.step-desc {
+  font-size: 15px;
+  color: var(--gray-300);
+  line-height: 1.6;
+}
+
+.step-icon-box {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, rgba(255,20,147,.12), rgba(0,217,255,.12));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 12px;
+  flex-shrink: 0;
+}
+
+.step-icon-box svg {
+  width: 24px;
+  height: 24px;
+  stroke: var(--cyan);
+  fill: none;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* ============================================
+   BENEFITS FLOW SECTION
+   ============================================ */
+.benefits {
+  position: relative;
+  padding: 120px 0;
+  overflow: hidden;
+}
+
+.benefits .orb-1 {
+  width: 400px;
+  height: 400px;
+  bottom: 0;
+  left: -100px;
+  animation: orbFloat 13s ease-in-out infinite 2s;
+}
+
+.benefits-flow {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Arrow connectors (desktop) */
+.benefits-flow::before,
+.benefits-flow::after {
+  display: none; /* arrows handled differently */
+}
+
+.benefit-card {
+  position: relative;
+  padding: 32px 24px;
+  border-radius: var(--radius-lg);
+  background: rgba(17,23,56,.6);
+  border: 1px solid rgba(255,255,255,.06);
+  text-align: center;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+  will-change: transform;
+  overflow: hidden;
+}
+
+.benefit-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  border-radius: 3px 3px 0 0;
+}
+.benefit-card:nth-child(1)::before { background: linear-gradient(90deg, var(--pink), var(--purple)); }
+.benefit-card:nth-child(2)::before { background: linear-gradient(90deg, var(--purple), var(--cyan)); }
+.benefit-card:nth-child(3)::before { background: linear-gradient(90deg, var(--cyan), var(--pink)); }
+.benefit-card:nth-child(4)::before { background: linear-gradient(90deg, var(--pink), var(--purple)); }
+
+.benefit-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 60px rgba(0,0,0,.3);
+}
+
+.benefit-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 18px;
+  margin: 0 auto 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.benefit-icon svg {
+  width: 30px;
+  height: 30px;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.bi-1 { background: linear-gradient(135deg, rgba(255,20,147,.2), rgba(157,78,221,.15)); }
+.bi-1 svg { stroke: var(--pink-light); fill: none; }
+.bi-2 { background: linear-gradient(135deg, rgba(157,78,221,.2), rgba(0,217,255,.15)); }
+.bi-2 svg { stroke: var(--purple); fill: none; }
+.bi-3 { background: linear-gradient(135deg, rgba(0,217,255,.2), rgba(255,20,147,.1)); }
+.bi-3 svg { stroke: var(--cyan); fill: none; }
+.bi-4 { background: linear-gradient(135deg, rgba(255,20,147,.15), rgba(157,78,221,.2)); }
+.bi-4 svg { stroke: var(--pink-light); fill: none; }
+
+.benefit-title {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--white);
+  margin-bottom: 8px;
+}
+
+.benefit-desc {
+  font-size: 14px;
+  color: var(--gray-300);
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+
+.benefit-metric {
+  display: inline-block;
+  padding: 6px 16px;
+  border-radius: 100px;
+  font-family: var(--font-display);
+  font-size: 14px;
+  font-weight: 800;
+}
+.bm-1 { background: rgba(255,20,147,.12); color: var(--pink-light); }
+.bm-2 { background: rgba(157,78,221,.12); color: var(--purple); }
+.bm-3 { background: rgba(0,217,255,.12); color: var(--cyan); }
+.bm-4 { background: rgba(255,20,147,.12); color: var(--pink-light); }
+
+/* Arrow connector between cards */
+.benefit-arrow {
+  position: absolute;
+  right: -22px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 5;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.benefit-arrow svg {
+  width: 20px;
+  height: 20px;
+  stroke: var(--cyan);
+  stroke-width: 2.5;
+  fill: none;
+  filter: drop-shadow(0 0 6px rgba(0,217,255,.5));
+  animation: arrowPulse 2s ease-in-out infinite;
+}
+
+@keyframes arrowPulse {
+  0%, 100% { opacity: .5; transform: translateX(0); }
+  50% { opacity: 1; transform: translateX(3px); }
+}
+
+.benefits-bottom-text {
+  text-align: center;
+  margin-top: 48px;
+  font-size: 16px;
+  color: var(--gray-500);
+  position: relative;
+  z-index: 1;
+}
+.benefits-bottom-text strong {
+  color: var(--cyan);
+}
+
+/* ============================================
+   VALUE COMPARISON SECTION
+   ============================================ */
+.value {
+  position: relative;
+  padding: 120px 0;
+  overflow: hidden;
+}
+
+.value .orb-1 {
+  width: 450px;
+  height: 450px;
+  top: 20%;
+  right: -150px;
+  animation: orbFloat 16s ease-in-out infinite;
+}
+
+.comparison-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  margin-bottom: 80px;
+  position: relative;
+  z-index: 1;
+}
+
+.comparison-card {
+  padding: 40px;
+  border-radius: var(--radius-xl);
+  position: relative;
+  overflow: hidden;
+}
+
+.comp-old {
+  background: rgba(17,23,56,.5);
+  border: 1px solid rgba(255,255,255,.06);
+}
+
+.comp-new {
+  background: linear-gradient(145deg, rgba(255,20,147,.08), rgba(157,78,221,.06), rgba(0,217,255,.08));
+  border: 1px solid rgba(0,217,255,.15);
+  box-shadow: 0 0 60px rgba(0,217,255,.05);
+}
+
+.comp-badge {
+  display: inline-flex;
+  padding: 5px 14px;
+  border-radius: 100px;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+.comp-old .comp-badge {
+  background: rgba(255,255,255,.06);
+  color: var(--gray-500);
+}
+.comp-new .comp-badge {
+  background: linear-gradient(90deg, rgba(0,217,255,.2), rgba(255,20,147,.15));
+  color: var(--cyan);
+}
+
+.comp-title {
+  font-family: var(--font-display);
+  font-size: 24px;
+  font-weight: 800;
+  margin-bottom: 32px;
+}
+.comp-old .comp-title { color: var(--gray-300); }
+.comp-new .comp-title { color: var(--white); }
+
+.comp-items { display: flex; flex-direction: column; gap: 20px; }
+
+.comp-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.comp-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.comp-icon svg {
+  width: 16px;
+  height: 16px;
+  stroke-width: 3;
+}
+
+.comp-old .comp-icon {
+  background: rgba(255,70,70,.1);
+}
+.comp-old .comp-icon svg {
+  stroke: #ff4646;
+}
+.comp-new .comp-icon {
+  background: rgba(0,217,255,.12);
+}
+.comp-new .comp-icon svg {
+  stroke: var(--cyan);
+}
+
+.comp-item-label {
+  font-size: 13px;
+  color: var(--gray-500);
+  margin-bottom: 2px;
+}
+
+.comp-item-value {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 16px;
+}
+.comp-old .comp-item-value { color: var(--gray-300); }
+.comp-new .comp-item-value { color: var(--white); }
+
+/* VS divider */
+.vs-divider {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 5;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--bg-deep);
+  border: 2px solid rgba(255,255,255,.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: 16px;
+  color: var(--gray-500);
+}
+
+/* ============================================
+   PRICING SECTION
+   ============================================ */
+.pricing {
+  position: relative;
+  z-index: 1;
+}
+
+.pricing-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.pricing-card {
+  padding: 40px;
+  border-radius: var(--radius-xl);
+  background: rgba(17,23,56,.6);
+  border: 1px solid rgba(255,255,255,.06);
+  position: relative;
+  overflow: hidden;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+  will-change: transform;
+}
+
+.pricing-card:hover {
+  transform: translateY(-4px);
+}
+
+.pricing-card.featured {
+  border-color: rgba(0,217,255,.2);
+  background: linear-gradient(160deg, rgba(255,20,147,.06), rgba(157,78,221,.04), rgba(0,217,255,.06));
+  box-shadow: 0 0 60px rgba(0,217,255,.06);
+}
+
+.pricing-card.featured:hover {
+  box-shadow: 0 0 80px rgba(0,217,255,.1), 0 20px 60px rgba(0,0,0,.3);
+}
+
+.popular-badge {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  padding: 5px 14px;
+  border-radius: 100px;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  background: linear-gradient(90deg, var(--pink), var(--purple));
+  color: var(--white);
+}
+
+.pricing-name {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--gray-300);
+  margin-bottom: 12px;
+}
+
+.pricing-price {
+  font-family: var(--font-display);
+  font-size: 48px;
+  font-weight: 900;
+  color: var(--white);
+  margin-bottom: 4px;
+  letter-spacing: -1px;
+}
+.pricing-price span {
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--gray-500);
+}
+
+.pricing-period {
+  font-size: 14px;
+  color: var(--gray-500);
+  margin-bottom: 32px;
+}
+
+.pricing-features {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-bottom: 36px;
+}
+
+.pricing-feature {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 15px;
+  color: var(--gray-300);
+}
+
+.pricing-feature svg {
+  width: 18px;
+  height: 18px;
+  stroke: var(--cyan);
+  stroke-width: 2.5;
+  flex-shrink: 0;
+}
+
+.pricing-card .btn { width: 100%; justify-content: center; }
+
+/* ============================================
+   FAQ SECTION
+   ============================================ */
+.faq {
+  position: relative;
+  padding: 120px 0;
+  overflow: hidden;
+}
+
+.faq-grid {
+  max-width: 760px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  position: relative;
+  z-index: 1;
+}
+
+.faq-item {
+  border-radius: var(--radius-md);
+  background: rgba(17,23,56,.5);
+  border: 1px solid rgba(255,255,255,.06);
+  overflow: hidden;
+  transition: border-color var(--transition-fast);
+}
+
+.faq-item.open {
+  border-color: rgba(0,217,255,.15);
+}
+
+.faq-question {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 22px 28px;
+  background: none;
+  color: var(--white);
+  font-family: var(--font-display);
+  font-size: 17px;
+  font-weight: 700;
+  text-align: left;
+  transition: color var(--transition-fast);
+  cursor: pointer;
+}
+
+.faq-question:hover { color: var(--cyan); }
+
+.faq-chevron {
+  width: 20px;
+  height: 20px;
+  stroke: var(--gray-500);
+  stroke-width: 2.5;
+  fill: none;
+  transition: transform var(--transition-fast), stroke var(--transition-fast);
+  flex-shrink: 0;
+}
+
+.faq-item.open .faq-chevron {
+  transform: rotate(180deg);
+  stroke: var(--cyan);
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height var(--transition-med);
+}
+
+.faq-answer-inner {
+  padding: 0 28px 22px;
+  font-size: 15px;
+  color: var(--gray-300);
+  line-height: 1.7;
+}
+
+/* ============================================
+   CONTACT / BOOKING SECTION
+   ============================================ */
+.contact {
+  position: relative;
+  padding: 120px 0;
+  overflow: hidden;
+}
+
+.contact .orb-1 {
+  width: 400px;
+  height: 400px;
+  top: -100px;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: orbFloat 14s ease-in-out infinite;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: start;
+  position: relative;
+  z-index: 1;
+}
+
+.contact-info { max-width: 480px; }
+
+.contact-info p {
+  font-size: 17px;
+  color: var(--gray-300);
+  line-height: 1.7;
+  margin-bottom: 32px;
+}
+
+.contact-benefits {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.contact-benefit {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-size: 16px;
+  color: var(--gray-100);
+}
+
+.contact-benefit-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, rgba(0,217,255,.12), rgba(157,78,221,.1));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.contact-benefit-icon svg {
+  width: 18px;
+  height: 18px;
+  stroke: var(--cyan);
+  stroke-width: 2;
+  fill: none;
+}
+
+/* Form */
+.contact-form {
+  padding: 40px;
+  border-radius: var(--radius-xl);
+  background: rgba(17,23,56,.6);
+  border: 1px solid rgba(255,255,255,.06);
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-label {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--gray-300);
+  margin-bottom: 8px;
+}
+
+.form-input,
+.form-select {
+  width: 100%;
+  padding: 14px 18px;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,.08);
+  background: rgba(6,9,24,.6);
+  color: var(--white);
+  font-family: var(--font-body);
+  font-size: 15px;
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+  outline: none;
+}
+
+.form-input::placeholder { color: var(--gray-500); }
+
+.form-input:focus,
+.form-select:focus {
+  border-color: rgba(0,217,255,.3);
+  box-shadow: 0 0 0 3px rgba(0,217,255,.08);
+}
+
+.form-select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%236b6f85' stroke-width='2'%3E%3Cpolyline points='6,9 12,15 18,9'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+  cursor: pointer;
+}
+
+.form-select option {
+  background: var(--bg-primary);
+  color: var(--white);
+}
+
+.form-submit {
+  width: 100%;
+  margin-top: 8px;
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+.footer {
+  padding: 80px 0 40px;
+  border-top: 1px solid rgba(255,255,255,.06);
+  position: relative;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 48px;
+  margin-bottom: 60px;
+}
+
+.footer-brand p {
+  font-size: 15px;
+  color: var(--gray-500);
+  margin-top: 16px;
+  max-width: 280px;
+  line-height: 1.6;
+}
+
+.footer-col-title {
+  font-family: var(--font-display);
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--gray-100);
+  margin-bottom: 20px;
+}
+
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.footer-links a {
+  font-size: 14px;
+  color: var(--gray-500);
+  transition: color var(--transition-fast);
+}
+.footer-links a:hover { color: var(--cyan); }
+
+.footer-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 32px;
+  border-top: 1px solid rgba(255,255,255,.06);
+}
+
+.footer-copyright {
+  font-size: 14px;
+  color: var(--gray-500);
+}
+
+.footer-socials {
+  display: flex;
+  gap: 16px;
+}
+
+.footer-social {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: rgba(255,255,255,.04);
+  border: 1px solid rgba(255,255,255,.06);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform var(--transition-fast), background var(--transition-fast), border-color var(--transition-fast);
+  will-change: transform;
+}
+.footer-social:hover {
+  transform: translateY(-2px);
+  background: rgba(0,217,255,.08);
+  border-color: rgba(0,217,255,.2);
+}
+.footer-social svg {
+  width: 18px;
+  height: 18px;
+  fill: var(--gray-300);
+}
+
+/* ============================================
+   SCROLL TO TOP BUTTON
+   ============================================ */
+.scroll-top {
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, var(--pink), var(--purple));
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 900;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity var(--transition-fast), transform var(--transition-fast), box-shadow var(--transition-fast);
+  will-change: transform, opacity;
+  pointer-events: none;
+  box-shadow: var(--glow-pink);
+}
+.scroll-top.visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: all;
+}
+.scroll-top:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 40px rgba(255,20,147,.4);
+}
+.scroll-top svg {
+  width: 22px;
+  height: 22px;
+  stroke: var(--white);
+  stroke-width: 2.5;
+  fill: none;
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 1024px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+    text-align: center;
+  }
+  .hero-content {
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .hero-sub { max-width: 100%; }
+  .hero-buttons { justify-content: center; }
+  .social-proof { justify-content: center; }
+  .video-wrapper {
+    margin: 0 auto;
+    max-width: 450px;
+  }
+  .steps-grid { grid-template-columns: 1fr; }
+  .benefits-flow { grid-template-columns: 1fr 1fr; }
+  .benefit-arrow { display: none; }
+  .comparison-grid { grid-template-columns: 1fr; }
+  .vs-divider { display: none; }
+  .contact-grid { grid-template-columns: 1fr; }
+  .footer-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+}
+
+@media (max-width: 768px) {
+  .nav-desktop { display: none; }
+  .header-cta { display: none; }
+  .hamburger { display: flex; }
+
+  .hero { padding: 120px 0 80px; }
+  .hero-headline { font-size: clamp(30px, 7vw, 44px); }
+
+  .benefits-flow { grid-template-columns: 1fr; }
+
+  .pricing-grid { grid-template-columns: 1fr; max-width: 420px; }
+
+  .footer-grid { grid-template-columns: 1fr; gap: 28px; }
+  .footer-bottom { flex-direction: column; gap: 20px; text-align: center; }
+
+  .section-title { font-size: clamp(26px, 6vw, 36px); }
+}
+
+@media (max-width: 480px) {
+  .container { padding: 0 16px; }
+  .hero-buttons { flex-direction: column; width: 100%; }
+  .hero-buttons .btn { width: 100%; }
+  .step-card { flex-direction: column; gap: 16px; padding: 28px; }
+  .step-number { font-size: 44px; }
+  .pricing-card { padding: 28px; }
+  .pricing-price { font-size: 40px; }
+  .contact-form { padding: 28px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ============================================
+     HEADER
+     ============================================ -->
+<header class="header" id="header">
+  <div class="header-inner">
+    <a href="#" class="logo">
+      <div class="logo-icon">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/><path d="M8 12l3 3 5-5"/></svg>
+      </div>
+      <span class="gradient-text">Flamingo Flow</span>
+    </a>
+
+    <nav class="nav-desktop">
+      <a href="#features">Features</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <a href="#contact" class="header-cta">Get Started</a>
+
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- Mobile nav overlay -->
+<nav class="nav-mobile" id="mobileNav">
+  <a href="#features" class="mobile-nav-link">Features</a>
+  <a href="#pricing" class="mobile-nav-link">Pricing</a>
+  <a href="#faq" class="mobile-nav-link">FAQ</a>
+  <a href="#contact" class="mobile-nav-link">Contact</a>
+  <a href="#contact" class="btn btn-primary btn-sm">Get Started</a>
+</nav>
+
+
+<!-- ============================================
+     HERO SECTION
+     ============================================ -->
+<section class="hero" id="hero">
+  <div class="orb orb-pink orb-1"></div>
+  <div class="orb orb-cyan orb-2"></div>
+  <div class="orb orb-purple orb-3"></div>
+
+  <div class="container">
+    <div class="hero-grid">
+      <!-- Left: Content -->
+      <div class="hero-content reveal">
+        <div class="section-label">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          HOW IT WORKS
+        </div>
+
+        <h1 class="hero-headline">
+          Rank in <span class="highlight">Google's Top&nbsp;3</span> in <span class="highlight">Days, Not&nbsp;Months</span>
+        </h1>
+
+        <p class="hero-sub">
+          Stop wasting $10K+ on Google Ads. Get authentic reviews, rank in the map pack, and dominate your local search — all for just <strong>$130–$250/month</strong>.
+        </p>
+
+        <div class="hero-buttons">
+          <a href="#contact" class="btn btn-primary">
+            Watch Demo
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+          <a href="#features" class="btn btn-outline">Learn More</a>
+        </div>
+
+        <div class="social-proof">
+          <div class="avatar-group">
+            <div class="avatar a1">J</div>
+            <div class="avatar a2">S</div>
+            <div class="avatar a3">M</div>
+            <div class="avatar a4">K</div>
+          </div>
+          <p class="social-proof-text">Trusted by <strong>500+ local businesses</strong></p>
+        </div>
+      </div>
+
+      <!-- Right: Video -->
+      <div class="reveal" style="transition-delay:150ms">
+        <div class="video-wrapper" id="videoWrapper">
+          <div class="video-bg"></div>
+          <div class="video-grid-pattern"></div>
+          <div class="video-inner">
+            <div class="play-btn">
+              <svg viewBox="0 0 24 24"><polygon points="8,5 19,12 8,19"/></svg>
+            </div>
+            <div class="video-title">Your VSL Video</div>
+            <div class="video-duration">2:45 min walkthrough</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================
+     HOW IT WORKS SECTION
+     ============================================ -->
+<section class="how-it-works" id="features">
+  <div class="orb orb-purple orb-1"></div>
+
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-label" style="margin:0 auto 20px">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
+        4 SIMPLE STEPS
+      </div>
+      <h2 class="section-title">Get Ranked in <span class="gradient-text">4 Simple Steps</span></h2>
+      <p class="section-subtitle">Set it up in minutes, see results in days</p>
+    </div>
+
+    <div class="steps-grid reveal-stagger">
+      <!-- Step 1 -->
+      <div class="step-card reveal">
+        <div class="step-number">1</div>
+        <div class="step-content">
+          <div class="step-icon-box">
+            <svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 00-4-4H6a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><line x1="19" y1="8" x2="19" y2="14"/><line x1="22" y1="11" x2="16" y2="11"/></svg>
+          </div>
+          <h3 class="step-title">Sign Up</h3>
+          <p class="step-desc">Create your Flamingo Flow account in under 2 minutes. No credit card required to start.</p>
+        </div>
+      </div>
+      <!-- Step 2 -->
+      <div class="step-card reveal">
+        <div class="step-number">2</div>
+        <div class="step-content">
+          <div class="step-icon-box">
+            <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><line x1="9" y1="15" x2="15" y2="15"/></svg>
+          </div>
+          <h3 class="step-title">Upload Lists</h3>
+          <p class="step-desc">Add your customer contacts and photos to your dashboard with a simple import.</p>
+        </div>
+      </div>
+      <!-- Step 3 -->
+      <div class="step-card reveal">
+        <div class="step-number">3</div>
+        <div class="step-content">
+          <div class="step-icon-box">
+            <svg viewBox="0 0 24 24"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+          </div>
+          <h3 class="step-title">Send Requests</h3>
+          <p class="step-desc">Our system automatically sends review requests to your customers via SMS and email.</p>
+        </div>
+      </div>
+      <!-- Step 4 -->
+      <div class="step-card reveal">
+        <div class="step-number">4</div>
+        <div class="step-content">
+          <div class="step-icon-box">
+            <svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+          </div>
+          <h3 class="step-title">See Results</h3>
+          <p class="step-desc">Watch reviews roll in and your rankings climb in real-time on your live dashboard.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================
+     BENEFITS FLOW SECTION
+     ============================================ -->
+<section class="benefits" id="benefits">
+  <div class="orb orb-pink orb-1"></div>
+
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-label" style="margin:0 auto 20px">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+        THE RIPPLE EFFECT
+      </div>
+      <h2 class="section-title">Your Path to <span class="gradient-text">Google Domination</span></h2>
+      <p class="section-subtitle">Watch your business transform through our proven system</p>
+    </div>
+
+    <div class="benefits-flow reveal-stagger">
+      <!-- Benefit 1 -->
+      <div class="benefit-card reveal">
+        <div class="benefit-arrow">
+          <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </div>
+        <div class="benefit-icon bi-1">
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" fill="rgba(255,105,180,.2)" stroke="currentColor"/></svg>
+        </div>
+        <h3 class="benefit-title">Consistent Reviews</h3>
+        <p class="benefit-desc">Build social proof with a steady stream of authentic customer reviews</p>
+        <span class="benefit-metric bm-1">+300% reviews</span>
+      </div>
+      <!-- Benefit 2 -->
+      <div class="benefit-card reveal">
+        <div class="benefit-arrow">
+          <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </div>
+        <div class="benefit-icon bi-2">
+          <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        </div>
+        <h3 class="benefit-title">Top 3 Map Pack</h3>
+        <p class="benefit-desc">Dominate the Google Map results where customers are actively searching</p>
+        <span class="benefit-metric bm-2">#1 Local Results</span>
+      </div>
+      <!-- Benefit 3 -->
+      <div class="benefit-card reveal">
+        <div class="benefit-arrow">
+          <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </div>
+        <div class="benefit-icon bi-3">
+          <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        </div>
+        <h3 class="benefit-title">Local Visibility</h3>
+        <p class="benefit-desc">Appear in local search results, knowledge panels, and Google Business profiles</p>
+        <span class="benefit-metric bm-3">+500% visibility</span>
+      </div>
+      <!-- Benefit 4 -->
+      <div class="benefit-card reveal">
+        <div class="benefit-icon bi-4">
+          <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+        </div>
+        <h3 class="benefit-title">More Bookings &amp; Calls</h3>
+        <p class="benefit-desc">Convert rankings into real customers calling and booking your services</p>
+        <span class="benefit-metric bm-4">+2x bookings</span>
+      </div>
+    </div>
+
+    <p class="benefits-bottom-text reveal">All powered by <strong>authentic, Google-verified reviews</strong></p>
+  </div>
+</section>
+
+
+<!-- ============================================
+     VALUE COMPARISON + PRICING SECTION
+     ============================================ -->
+<section class="value" id="pricing">
+  <div class="orb orb-cyan orb-1"></div>
+
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-label" style="margin:0 auto 20px">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+        VALUE COMPARISON
+      </div>
+      <h2 class="section-title">Why Waste $10K+ When You Can <span class="gradient-text">Dominate for $250?</span></h2>
+      <p class="section-subtitle">See exactly how Flamingo Flow stacks up against traditional advertising</p>
+    </div>
+
+    <!-- Comparison Cards -->
+    <div class="comparison-grid reveal" style="position:relative">
+      <div class="vs-divider">VS</div>
+      <!-- Traditional -->
+      <div class="comparison-card comp-old">
+        <span class="comp-badge">The Old Way</span>
+        <h3 class="comp-title">Traditional Google Ads</h3>
+        <div class="comp-items">
+          <div class="comp-item">
+            <div class="comp-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></div>
+            <div><div class="comp-item-label">Monthly Cost</div><div class="comp-item-value">$10,000+</div></div>
+          </div>
+          <div class="comp-item">
+            <div class="comp-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></div>
+            <div><div class="comp-item-label">Time to Results</div><div class="comp-item-value">3–6 months</div></div>
+          </div>
+          <div class="comp-item">
+            <div class="comp-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></div>
+            <div><div class="comp-item-label">Ongoing Costs</div><div class="comp-item-value">Never-ending ad spend</div></div>
+          </div>
+          <div class="comp-item">
+            <div class="comp-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></div>
+            <div><div class="comp-item-label">Control</div><div class="comp-item-value">At mercy of algorithm changes</div></div>
+          </div>
+          <div class="comp-item">
+            <div class="comp-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></div>
+            <div><div class="comp-item-label">ROI</div><div class="comp-item-value">Uncertain, hard to track</div></div>
+          </div>
+          <div class="comp-item">
+            <div class="comp-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></div>
+            <div><div class="comp-item-label">Setup</div><div class="comp-item-value">Complex, requires expertise</div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Flamingo Flow -->
+      <div class="comparison-card comp-new">
+        <span class="comp-badge">The Smart Way</span>
+        <h3 class="comp-title"><span class="gradient-text-pink-cyan">Flamingo Flow</span></h3>
+        <div class="comp-items">
+          <div class="comp-item">
+            <div class="comp-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+            <div><div class="comp-item-label">Monthly Cost</div><div class="comp-item-value">$130–$250 CAD</div></div>
+          </div>
+          <div class="comp-item">
+            <div class="comp-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+            <div><div class="comp-item-label">Time to Results</div><div class="comp-item-value">Days to weeks</div></div>
+          </div>
+          <div class="comp-item">
+            <div class="comp-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+            <div><div class="comp-item-label">Ongoing Costs</div><div class="comp-item-value">Flat, predictable pricing</div></div>
+          </div>
+          <div class="comp-item">
+            <div class="comp-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+            <div><div class="comp-item-label">Control</div><div class="comp-item-value">You own the reviews & rankings</div></div>
+          </div>
+          <div class="comp-item">
+            <div class="comp-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+            <div><div class="comp-item-label">ROI</div><div class="comp-item-value">Measurable, immediate results</div></div>
+          </div>
+          <div class="comp-item">
+            <div class="comp-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></div>
+            <div><div class="comp-item-label">Setup</div><div class="comp-item-value">Simple 4-step process</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Pricing Tiers -->
+    <div class="pricing" id="pricing-cards">
+      <div class="section-header reveal" style="margin-top: 20px;">
+        <h2 class="section-title">Simple, <span class="gradient-text">Transparent Pricing</span></h2>
+        <p class="section-subtitle">No hidden fees. No long-term contracts. Cancel anytime.</p>
+      </div>
+
+      <div class="pricing-grid reveal-stagger">
+        <!-- Starter -->
+        <div class="pricing-card reveal">
+          <div class="pricing-name">Starter</div>
+          <div class="pricing-price">$130 <span>CAD</span></div>
+          <div class="pricing-period">per month</div>
+          <div class="pricing-features">
+            <div class="pricing-feature">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              Up to 100 reviews/month
+            </div>
+            <div class="pricing-feature">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              Dashboard access
+            </div>
+            <div class="pricing-feature">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              SMS + email campaigns
+            </div>
+            <div class="pricing-feature">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              Basic support
+            </div>
+          </div>
+          <a href="#contact" class="btn btn-outline">Start Free Trial</a>
+        </div>
+        <!-- Pro -->
+        <div class="pricing-card featured reveal">
+          <span class="popular-badge">Most Popular</span>
+          <div class="pricing-name">Pro</div>
+          <div class="pricing-price">$250 <span>CAD</span></div>
+          <div class="pricing-period">per month</div>
+          <div class="pricing-features">
+            <div class="pricing-feature">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              Unlimited reviews
+            </div>
+            <div class="pricing-feature">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              Advanced analytics
+            </div>
+            <div class="pricing-feature">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              Priority support
+            </div>
+            <div class="pricing-feature">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              API access
+            </div>
+            <div class="pricing-feature">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              Custom branding
+            </div>
+          </div>
+          <a href="#contact" class="btn btn-primary">Get Started Now</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================
+     FAQ SECTION
+     ============================================ -->
+<section class="faq" id="faq">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-label" style="margin:0 auto 20px">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+        FAQ
+      </div>
+      <h2 class="section-title">Got <span class="gradient-text">Questions?</span></h2>
+      <p class="section-subtitle">Here are answers to the most common ones</p>
+    </div>
+
+    <div class="faq-grid reveal-stagger">
+      <div class="faq-item reveal">
+        <button class="faq-question">
+          Is this actually legit? How do you get real reviews?
+          <svg class="faq-chevron" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">100% legit. We don't create fake reviews — we help you collect <em>authentic</em> reviews from your real customers. Our system sends automated review requests via SMS and email to people who've actually used your services. Every review is genuine and Google-verified.</div>
+        </div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-question">
+          How fast will I actually see results?
+          <svg class="faq-chevron" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">Most businesses start seeing new reviews within the first 48 hours. Ranking improvements in the Google Map Pack typically happen within 1–3 weeks, depending on your market and competition level. Some clients hit the Top 3 in under a week.</div>
+        </div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-question">
+          What if I'm in a really saturated market?
+          <svg class="faq-chevron" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">Saturated markets are actually where Flamingo Flow shines brightest. Most of your competitors <em>aren't</em> actively collecting reviews — they're spending money on ads instead. By building a consistent stream of authentic reviews, you leapfrog competitors who rely solely on paid traffic.</div>
+        </div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-question">
+          Can I cancel anytime? Are there long-term contracts?
+          <svg class="faq-chevron" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">No contracts, no commitments. You can cancel your subscription at any time with one click from your dashboard. We believe our results speak for themselves — you'll stay because it works, not because you're locked in.</div>
+        </div>
+      </div>
+      <div class="faq-item reveal">
+        <button class="faq-question">
+          Do I need any technical skills to use this?
+          <svg class="faq-chevron" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">Not at all. If you can send a text message, you can use Flamingo Flow. Our dashboard is designed for business owners, not developers. Setup takes under 2 minutes, and our support team is always here if you need help.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================
+     CONTACT / BOOKING SECTION
+     ============================================ -->
+<section class="contact" id="contact">
+  <div class="orb orb-purple orb-1"></div>
+
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-label" style="margin:0 auto 20px">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        BOOK A CALL
+      </div>
+      <h2 class="section-title">Ready to <span class="gradient-text">Dominate Your Local Market?</span></h2>
+      <p class="section-subtitle">Book a free 15-minute strategy call with our team</p>
+    </div>
+
+    <div class="contact-grid">
+      <!-- Left: Info -->
+      <div class="contact-info reveal">
+        <p>Discuss your specific business challenges and see exactly how Flamingo Flow can help you rank faster than your competitors. No pressure, no obligation — just actionable insights.</p>
+        <div class="contact-benefits">
+          <div class="contact-benefit">
+            <div class="contact-benefit-icon">
+              <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            </div>
+            Custom ranking strategy for your business
+          </div>
+          <div class="contact-benefit">
+            <div class="contact-benefit-icon">
+              <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            </div>
+            Competitive analysis of your local market
+          </div>
+          <div class="contact-benefit">
+            <div class="contact-benefit-icon">
+              <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            </div>
+            ROI projection based on your industry
+          </div>
+          <div class="contact-benefit">
+            <div class="contact-benefit-icon">
+              <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            </div>
+            Zero obligation — cancel anytime
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Form -->
+      <div class="reveal" style="transition-delay:150ms">
+        <form class="contact-form" id="contactForm" onsubmit="return handleSubmit(event)">
+          <div class="form-group">
+            <label class="form-label" for="name">Full Name</label>
+            <input class="form-input" type="text" id="name" name="name" placeholder="John Smith" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="email">Email Address</label>
+            <input class="form-input" type="email" id="email" name="email" placeholder="john@business.com" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="phone">Phone Number</label>
+            <input class="form-input" type="tel" id="phone" name="phone" placeholder="+1 (555) 123-4567">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="business">Business Type</label>
+            <select class="form-select" id="business" name="business">
+              <option value="" disabled selected>Select your industry</option>
+              <option value="restaurant">Restaurant / Food Service</option>
+              <option value="medical">Medical / Healthcare</option>
+              <option value="legal">Legal Services</option>
+              <option value="home">Home Services (HVAC, Plumbing, etc.)</option>
+              <option value="auto">Automotive</option>
+              <option value="beauty">Beauty / Wellness / Spa</option>
+              <option value="real-estate">Real Estate</option>
+              <option value="fitness">Fitness / Gym</option>
+              <option value="retail">Retail</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          <button type="submit" class="btn btn-primary form-submit">
+            Book My Free Strategy Call
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================
+     FOOTER
+     ============================================ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="#" class="logo">
+          <div class="logo-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/><path d="M8 12l3 3 5-5"/></svg>
+          </div>
+          <span class="gradient-text">Flamingo Flow</span>
+        </a>
+        <p>Reputation management that gets local businesses into Google's Top 3 — fast, affordable, and proven.</p>
+      </div>
+      <div>
+        <h4 class="footer-col-title">Product</h4>
+        <div class="footer-links">
+          <a href="#features">Features</a>
+          <a href="#pricing">Pricing</a>
+          <a href="#faq">FAQ</a>
+          <a href="#">Status</a>
+        </div>
+      </div>
+      <div>
+        <h4 class="footer-col-title">Company</h4>
+        <div class="footer-links">
+          <a href="#">About</a>
+          <a href="#">Blog</a>
+          <a href="#">Careers</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </div>
+      <div>
+        <h4 class="footer-col-title">Legal</h4>
+        <div class="footer-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="#">Cookie Policy</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p class="footer-copyright">&copy; 2026 Flamingo Flow. All rights reserved.</p>
+      <div class="footer-socials">
+        <!-- LinkedIn -->
+        <a href="#" class="footer-social" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-4 0v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        </a>
+        <!-- Twitter / X -->
+        <a href="#" class="footer-social" aria-label="Twitter">
+          <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+        </a>
+        <!-- Instagram -->
+        <a href="#" class="footer-social" aria-label="Instagram">
+          <svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+<!-- Scroll to top button -->
+<button class="scroll-top" id="scrollTop" aria-label="Scroll to top">
+  <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg>
+</button>
+
+
+<!-- ============================================
+     JAVASCRIPT
+     ============================================ -->
+<script>
+(function() {
+  'use strict';
+
+  // === Header scroll effect ===
+  const header = document.getElementById('header');
+  let lastScroll = 0;
+  function onScroll() {
+    const y = window.scrollY;
+    if (y > 60) {
+      header.classList.add('scrolled');
+    } else {
+      header.classList.remove('scrolled');
+    }
+    // Scroll to top button
+    const btn = document.getElementById('scrollTop');
+    if (y > 600) {
+      btn.classList.add('visible');
+    } else {
+      btn.classList.remove('visible');
+    }
+    lastScroll = y;
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+
+  // === Scroll to top ===
+  document.getElementById('scrollTop').addEventListener('click', function() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+  // === Mobile hamburger menu ===
+  const hamburger = document.getElementById('hamburger');
+  const mobileNav = document.getElementById('mobileNav');
+
+  hamburger.addEventListener('click', function() {
+    hamburger.classList.toggle('active');
+    mobileNav.classList.toggle('open');
+    document.body.style.overflow = mobileNav.classList.contains('open') ? 'hidden' : '';
+  });
+
+  // Close mobile nav on link click
+  document.querySelectorAll('.mobile-nav-link, .nav-mobile .btn').forEach(function(link) {
+    link.addEventListener('click', function() {
+      hamburger.classList.remove('active');
+      mobileNav.classList.remove('open');
+      document.body.style.overflow = '';
+    });
+  });
+
+  // === Scroll reveal (IntersectionObserver) ===
+  var reveals = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+    reveals.forEach(function(el) { io.observe(el); });
+  } else {
+    // fallback: show everything
+    reveals.forEach(function(el) { el.classList.add('visible'); });
+  }
+
+  // === FAQ Accordion ===
+  document.querySelectorAll('.faq-question').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var item = btn.parentElement;
+      var answer = item.querySelector('.faq-answer');
+      var isOpen = item.classList.contains('open');
+
+      // Close all others
+      document.querySelectorAll('.faq-item.open').forEach(function(openItem) {
+        openItem.classList.remove('open');
+        openItem.querySelector('.faq-answer').style.maxHeight = '0';
+      });
+
+      if (!isOpen) {
+        item.classList.add('open');
+        answer.style.maxHeight = answer.scrollHeight + 'px';
+      }
+    });
+  });
+
+  // === Form submit handler ===
+  window.handleSubmit = function(e) {
+    e.preventDefault();
+    var form = document.getElementById('contactForm');
+    var submitBtn = form.querySelector('.form-submit');
+    var originalText = submitBtn.innerHTML;
+
+    submitBtn.innerHTML = '<span style="display:inline-flex;align-items:center;gap:8px;">Sent! We\'ll be in touch soon.</span>';
+    submitBtn.style.pointerEvents = 'none';
+    submitBtn.style.opacity = '0.7';
+
+    setTimeout(function() {
+      submitBtn.innerHTML = originalText;
+      submitBtn.style.pointerEvents = '';
+      submitBtn.style.opacity = '';
+      form.reset();
+    }, 3000);
+
+    return false;
+  };
+
+  // === Smooth scroll for anchor links ===
+  document.querySelectorAll('a[href^="#"]').forEach(function(a) {
+    a.addEventListener('click', function(e) {
+      var target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        e.preventDefault();
+        var offset = 80;
+        var top = target.getBoundingClientRect().top + window.scrollY - offset;
+        window.scrollTo({ top: top, behavior: 'smooth' });
+      }
+    });
+  });
+
+})();
+</script>
+</body>
+</html>
